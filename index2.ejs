@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <style>
+        .container {
+            position:relative;
+            left:600px;
+            top:200px;
+            width:350px;
+            height:250px;
+            border:5px solid white;
+            box-shadow:2px 2px 5px 5px grey;
+        }
+        h1 {
+                position:relative;
+                left:100px;
+    
+        }
+        button {
+            background-color:royalblue;
+            border:none;
+            height:30px;
+            color:white;
+            position:relative;
+            top:20px;
+            bottom:5px;
+            left:100px;
+        }
+        input[type="text"] {
+            position:relative;
+            left:80px;
+            height:30px;
+        }
+        p {
+            position:relative;
+            top:30px;
+            left:10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather</h1>
+        <form action="/weather" method="get">
+            <input type="text" name="location" placeholder="Enter location" required><br>
+            <button type="submit">Show Weather</button>
+        </form>
+
+        <% if (weather) { %>
+            <p>Weather: <%= weather %>°C</p>
+        <% } %>
+            <% if (error) { %>
+                <p><%= error %></p>
+            <% } %>
+    </div>
+</body>
+            </html>
