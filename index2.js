@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 app.get("/weather", (req, res) => {
     const location = req.query.location;
-    const apiKey = '252a36bdb4643609d5c11bcfadfcec5d'
+    const apiKey = process.env.WEATHER_API_KEY;
 
     axios
         .get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`)
